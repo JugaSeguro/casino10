@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon.svg">
+    <link rel="mask-icon" href="/favicon.svg" color="#ffc107">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileImage" content="/favicon.svg">
+    <meta name="msapplication-TileColor" content="#ffc107">
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="Regístrate gratis en Picante Sports y obtén 2000 fichas de bono. La plataforma más segura de Argentina con más de 12000 socios. Sin límites de apuestas y retiros." />
+    <meta name="keywords" content="Picante Sports, registro, casino, apuestas, bono, Argentina" />
+    <meta name="author" content="Picante Sports" />
+    <meta property="og:title" content="Picante Sports - Registro" />
+    <meta property="og:description" content="Regístrate gratis y obtén 2000 fichas de bono. La plataforma más segura de Argentina." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://picante-register.netlify.app/" />
+    <meta property="og:image" content="https://picante-register.netlify.app/img/logo.webp" />
+    <link rel="canonical" href="https://picante-register.netlify.app/" />
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1232682548319212', {}, {debug: true});
+    fbq('track', 'PageView', {}, {debug: true});
+    </script>
+    <!-- End Meta Pixel Code -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ER5KM2Z3XK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ER5KM2Z3XK');
+    </script>
+    
+    <!-- Preconexión a recursos externos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" />
+    
+    <title>Picante Sports - Registro | Obtén 2000 fichas gratis</title>
+    
+
+    
+
+    
+
+    
+
+    
+
+  </head>
+  <body class="text-center p-3">
+    <!-- Meta Pixel noscript -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1232682548319212&ev=PageView&noscript=1"
+    /></noscript>
+    
+    <!-- Fondo con scroll automático -->
+    <div class="background-container">
+      <div class="scrolling-background"></div>
+      <div class="dark-overlay"></div>
+    </div>
+    
+    <div id="root"></div>
+    
+
+    
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Notificación de cookies (opcional) -->
+    <div id="cookie-notice" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.8); color: white; text-align: center; padding: 10px; z-index: 999;">
+      <p style="margin: 0 0 10px 0;">Este sitio utiliza cookies para mejorar tu experiencia. Al continuar navegando, aceptas nuestro uso de cookies.</p>
+      <button id="accept-cookies" style="background: #FFD700; color: black; border: none; padding: 5px 15px; cursor: pointer; border-radius: 5px;">Aceptar</button>
+    </div>
+    
+    <script>
+      // Mostrar aviso de cookies si no ha sido aceptado
+      document.addEventListener('DOMContentLoaded', function() {
+        if (!localStorage.getItem('cookiesAccepted')) {
+          setTimeout(function() {
+            document.getElementById('cookie-notice').style.display = 'block';
+          }, 2000);
+        }
+        
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+          localStorage.setItem('cookiesAccepted', 'true');
+          document.getElementById('cookie-notice').style.display = 'none';
+        });
+      });
+    </script>
+  </body>
+</html>

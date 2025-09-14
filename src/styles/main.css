@@ -1,0 +1,12 @@
+/**
+ * Estilos principales de la aplicación
+ * Sigue principios SOLID con una arquitectura modular
+ */
+
+/* Importaciones de los módulos CSS */
+@import './base.css';
+@import './components/background.css';
+@import './components/register-button.css';
+@import './components/chat-button.css';
+@import './components/logo-bonus.css';
+@import './components/promo-text.css'; 

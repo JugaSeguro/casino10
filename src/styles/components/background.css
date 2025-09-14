@@ -1,0 +1,117 @@
+/**
+ * Estilos para el fondo de la aplicación
+ * Contiene el fondo animado y la superposición oscura
+ */
+
+/* Contenedor principal del fondo */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Fondo con scroll automático - más grande para evitar cortes */
+.scrolling-background {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 140%;
+  background-image: url('/img/fondo.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: scrollBackground 60s linear infinite;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+/* Animación del fondo */
+@keyframes scrollBackground {
+  0% {
+    transform: translateY(0) scale(1.1);
+  }
+  100% {
+    transform: translateY(-10%) scale(1.1);
+  }
+}
+
+/* Superposición oscura más intensa para mejorar la legibilidad */
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.65) 70%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  backdrop-filter: blur(2px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Fondo de respaldo solo color negro */
+body {
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+/* Asegurar que el contenido esté por encima del fondo */
+#root {
+  position: relative;
+  z-index: 3;
+}
+
+/* Capa adicional de oscurecimiento para el contenido */
+.logo-container,
+.bonus-title,
+.promo-text,
+.register-cta {
+  position: relative;
+  z-index: 5;
+}
+
+/* Efecto adicional de sombra para el texto */
+.bonus-title h1,
+.promo-text p {
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .scrolling-background {
+    animation-duration: 40s;
+    top: -15%;
+    left: -5%;
+    width: 110%;
+    height: 130%;
+  }
+  
+  .dark-overlay {
+    backdrop-filter: blur(1.5px);
+  }
+}
+
+/* Ajustes para dispositivos con pantallas pequeñas */
+@media (max-width: 480px) {
+  .scrolling-background {
+    animation-duration: 30s;
+    filter: blur(0.5px);
+  }
+  
+  .dark-overlay {
+    backdrop-filter: blur(1px);
+  }
+}

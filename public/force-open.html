@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Force Open</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+    }
+    button {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="force-open-button">Abrir Formulario</button>
+  
+  <script>
+    // Esta función intenta acceder al webcomponent desde el contexto superior
+    function tryToOpenWebcomponent() {
+      try {
+        // Intentar acceder al parent window
+        if (window.parent) {
+          console.log('Iframe: Accediendo a window.parent...');
+          
+          // Buscar el webcomponent en el DOM del padre
+          const webComponent = window.parent.document.querySelector('lux-user-register');
+          if (webComponent) {
+            console.log('Iframe: Webcomponent encontrado en el parent window');
+            
+            // Intentar acceder al shadowRoot
+            if (webComponent.shadowRoot) {
+              console.log('Iframe: ShadowRoot accesible');
+              
+              // Buscar botones y elementos clickeables
+              const buttons = Array.from(webComponent.shadowRoot.querySelectorAll('button'));
+              const clickables = Array.from(webComponent.shadowRoot.querySelectorAll('[class*="cursor-pointer"]'));
+              
+              console.log(`Iframe: Encontrados ${buttons.length} botones y ${clickables.length} elementos clickeables`);
+              
+              // Hacer clic en el primer botón encontrado
+              if (buttons.length > 0) {
+                console.log('Iframe: Haciendo clic en el primer botón...');
+                buttons[0].click();
+                return true;
+              }
+              
+              // Hacer clic en el primer elemento clickeable
+              if (clickables.length > 0) {
+                console.log('Iframe: Haciendo clic en el primer elemento clickeable...');
+                clickables[0].click();
+                return true;
+              }
+            } else {
+              console.log('Iframe: ShadowRoot no accesible');
+              
+              // Intentar enviar un evento al componente
+              const event = new CustomEvent('open-register', {
+                bubbles: true,
+                cancelable: true,
+                composed: true
+              });
+              webComponent.dispatchEvent(event);
+              return true;
+            }
+          } else {
+            console.log('Iframe: No se encontró el webcomponent en el parent window');
+          }
+        }
+      } catch (error) {
+        console.error('Iframe: Error al intentar abrir el webcomponent:', error);
+      }
+      
+      return false;
+    }
+    
+    // Intentar abrir el webcomponent después de cargar el iframe
+    window.addEventListener('DOMContentLoaded', function() {
+      console.log('Iframe: DOM cargado, intentando abrir el webcomponent...');
+      setTimeout(tryToOpenWebcomponent, 500);
+    });
+    
+    // Intentar también cuando se haga clic en el botón
+    document.getElementById('force-open-button').addEventListener('click', tryToOpenWebcomponent);
+    
+    // Exponer la función para que pueda ser llamada desde el parent
+    window.forceOpen = tryToOpenWebcomponent;
+  </script>
+</body>
+</html> 

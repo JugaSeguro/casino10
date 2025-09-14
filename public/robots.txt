@@ -1,0 +1,6 @@
+# Permitir a todos los robots de búsqueda
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://picante-register.netlify.app/sitemap.xml 

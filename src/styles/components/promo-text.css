@@ -1,0 +1,530 @@
+/**
+ * Estilos para los textos promocionales
+ * Responsable de la apariencia visual de los textos promocionales
+ */
+
+.promo-text {
+  grid-area: promo;
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 7;
+  overflow-y: auto;
+}
+
+.promo-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  animation: fadeInUp 0.5s ease-in-out;
+  transform-origin: center;
+  max-width: 600px;
+  line-height: 1.4;
+  backdrop-filter: blur(5px);
+  padding: 10px 18px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-left: 3px solid rgba(255, 215, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.promo-text p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.promo-text p:first-child {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 5px;
+  background: linear-gradient(90deg, #ffffff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  border-left: none;
+  background-color: transparent;
+  padding: 0;
+  animation: shimmer 2s infinite;
+}
+
+.promo-text p:nth-child(3),
+.promo-text p:nth-child(4) {
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-left: 3px solid #FFD700;
+  animation: pulse 2s infinite;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-text p:nth-child(3)::before,
+.promo-text p:nth-child(4)::before {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+.promo-text p:last-child {
+  color: #ff6b6b;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 5px;
+  border-radius: 50px;
+  background: rgba(255, 107, 107, 0.1);
+  border: 2px solid rgba(255, 107, 107, 0.4);
+  padding: 12px 25px;
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+  animation: glow 1.5s infinite alternate;
+  text-transform: uppercase;
+}
+
+/* Estilos mejorados para el texto del bono */
+.bonus-highlight {
+  position: relative;
+  color: #fff !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b) !important;
+  border: 3px solid #ffde59 !important;
+  padding: 12px 25px !important;
+  border-radius: 15px !important;
+  box-shadow: 
+    0 5px 20px rgba(255, 65, 108, 0.6),
+    0 0 0 5px rgba(255, 222, 89, 0.3) !important;
+  animation: 
+    pulse-strong 1.5s infinite alternate,
+    rainbow-border 3s infinite !important;
+  transform-style: preserve-3d;
+  transform: perspective(500px) rotateX(5deg);
+  transition: all 0.3s ease;
+  max-width: 90%;
+  width: auto;
+  box-sizing: border-box;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilos adicionales cuando es un botón */
+.bonus-highlight.bonus-button {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+/* Estilos para el texto promocional de Telegram */
+.telegram-promo {
+  color: #00aaff !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  text-transform: uppercase;
+  border-left: 3px solid #00aaff;
+  animation: pulse 2s infinite;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px !important;
+  background-color: rgba(0, 170, 255, 0.1);
+  border: 2px solid rgba(0, 170, 255, 0.4);
+  border-radius: 12px;
+  padding: 10px 18px !important;
+  max-width: 90%;
+}
+
+.telegram-promo:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+  background-color: rgba(0, 170, 255, 0.2);
+  color: #ffffff !important;
+}
+
+.bonus-highlight:hover {
+  transform: perspective(500px) rotateX(10deg) scale(1.05);
+  box-shadow: 
+    0 10px 30px rgba(255, 65, 108, 0.7),
+    0 0 0 8px rgba(255, 222, 89, 0.4) !important;
+}
+
+.bonus-highlight:before,
+.bonus-highlight:after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 30px;
+  height: 30px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffde59'%3E%3Cpath d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 7;
+  filter: drop-shadow(0 0 5px rgba(255, 222, 89, 0.8));
+  animation: rotate 5s linear infinite;
+}
+
+.bonus-highlight:before {
+  left: -5px;
+}
+
+.bonus-highlight:after {
+  right: -5px;
+}
+
+.bonus-amount {
+  color: #ffde59;
+  font-size: 26px;
+  font-weight: 900;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 0 5px;
+  transform: scale(1.1);
+  animation: shake 0.5s infinite alternate;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+  }
+}
+
+@keyframes pulse-strong {
+  0% {
+    transform: perspective(500px) rotateX(5deg) scale(1);
+    box-shadow: 
+      0 5px 20px rgba(255, 65, 108, 0.6),
+      0 0 0 5px rgba(255, 222, 89, 0.3);
+  }
+  100% {
+    transform: perspective(500px) rotateX(5deg) scale(1.05);
+    box-shadow: 
+      0 8px 25px rgba(255, 65, 108, 0.8),
+      0 0 0 8px rgba(255, 222, 89, 0.5);
+  }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: #ffde59; }
+  25% { border-color: #ff416c; }
+  50% { border-color: #ff4b2b; }
+  75% { border-color: #ff416c; }
+  100% { border-color: #ffde59; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+  0% { transform: scale(1.1) rotate(-2deg); }
+  100% { transform: scale(1.15) rotate(2deg); }
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .promo-text {
+    top: 190px; /* Ajustado para dejar espacio al título */
+    max-height: 45vh; /* Reducido para evitar superposición con botones */
+    padding-bottom: 100px; /* Aumentado para dejar espacio a los botones */
+    gap: 8px; /* Reducido para compactar el contenido */
+    padding: 0 15px;
+    width: 100%;
+  }
+  
+  .promo-text p {
+    font-size: 18px;
+    padding: 10px 16px;
+    line-height: 1.4;
+    max-width: 100%;
+  }
+  
+  .promo-text p:first-child {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  
+  .promo-text p:nth-child(3),
+  .promo-text p:nth-child(4),
+  .promo-text p:last-child {
+    font-size: 19px;
+    padding: 10px 18px;
+  }
+  
+  .bonus-highlight {
+    font-size: 17px !important;
+    padding: 10px 15px !important;
+    margin-top: 5px !important;
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .bonus-amount {
+    font-size: 22px;
+    display: block !important;
+    margin: 5px 0 !important;
+  }
+  
+  .telegram-promo {
+    font-size: 16px !important;
+    padding: 10px 15px !important;
+    margin-top: 8px !important;
+  }
+  
+  .bonus-highlight:before,
+  .bonus-highlight:after {
+    top: -8px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Ajustes para dispositivos muy pequeños */
+@media (max-width: 480px) {
+  .promo-text {
+    top: 180px; /* Ajustado para dejar espacio al título */
+    max-height: 45vh; /* Reducido para evitar superposición con botones */
+    gap: 6px; /* Reducido para compactar el contenido */
+    padding: 0 12px;
+    padding-bottom: 120px; /* Aumentado para dejar espacio a los botones */
+  }
+  
+  .promo-text p {
+    font-size: 16px;
+    padding: 8px 14px;
+    line-height: 1.3;
+  }
+  
+  .promo-text p:first-child {
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+  
+  .promo-text p:nth-child(3),
+  .promo-text p:nth-child(4),
+  .promo-text p:last-child {
+    font-size: 17px;
+    padding: 9px 16px;
+  }
+  
+  .bonus-highlight {
+    font-size: 15px !important;
+    padding: 8px 12px !important;
+    border-width: 2px !important;
+    width: 95% !important;
+    line-height: 1.2 !important;
+    margin-top: 5px !important;
+  }
+  
+  .bonus-amount {
+    font-size: 19px;
+    margin: 4px 0 !important;
+  }
+  
+  .bonus-highlight:before,
+  .bonus-highlight:after {
+    width: 20px;
+    height: 20px;
+    top: -5px;
+  }
+}
+
+/* Ajustes para dispositivos con orientación horizontal (landscape) */
+@media (max-height: 600px) and (orientation: landscape) {
+  .promo-text {
+    top: 140px;
+    max-height: 40vh;
+    gap: 4px;
+  }
+  
+  .promo-text p {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-bottom: 0;
+  }
+  
+  .promo-text p:first-child {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+  
+  .promo-text p:last-child {
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  
+  .bonus-highlight {
+    font-size: 15px !important;
+    padding: 8px 12px !important;
+    border-width: 2px !important;
+    margin-top: 5px !important;
+    width: 85% !important;
+    transform: perspective(500px) rotateX(3deg) !important;
+  }
+  
+  .bonus-amount {
+    font-size: 17px;
+    display: inline !important;
+  }
+  
+  .bonus-highlight:before,
+  .bonus-highlight:after {
+    width: 18px;
+    height: 18px;
+    top: -5px;
+  }
+}
+
+/* Ajustes específicos para dispositivos muy pequeños en altura */
+@media (max-height: 500px) {
+  .promo-text {
+    top: 140px !important;
+    gap: 6px !important;
+  }
+  
+  .bonus-highlight {
+    margin-top: 3px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .promo-text {
+    top: 220px;
+  }
+  
+  .promo-text p {
+    font-size: 17px;
+    max-width: 80%;
+  }
+  
+  .promo-text p:first-child {
+    font-size: 22px;
+  }
+  
+  .bonus-highlight {
+    font-size: 20px !important;
+    width: 600px !important;
+    max-width: 85% !important;
+    margin-top: 10px !important;
+    padding: 15px 35px !important;
+  }
+  
+  .bonus-amount {
+    font-size: 24px;
+  }
+}
+
+/* Ajustes para mejorar la legibilidad del texto del bono en diferentes dispositivos */
+@media (min-width: 280px) and (max-width: 320px) {
+  .bonus-highlight {
+    font-size: 14px !important;
+    padding: 8px 10px !important;
+  }
+  
+  .bonus-amount {
+    font-size: 17px;
+  }
+}
+
+/* Asegurar que las estrellas no se salgan de la pantalla en dispositivos pequeños */
+@media (max-width: 350px) {
+  .bonus-highlight:before {
+    left: -2px;
+  }
+  
+  .bonus-highlight:after {
+    right: -2px;
+  }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1025px) {
+  .bonus-highlight {
+    width: 700px;
+    max-width: 75%;
+    font-size: 24px !important;
+    padding: 18px 40px !important;
+    border-radius: 20px !important;
+  }
+  
+  .bonus-amount {
+    font-size: 30px;
+  }
+  
+  .bonus-highlight:before,
+  .bonus-highlight:after {
+    width: 38px;
+    height: 38px;
+    top: -12px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .bonus-highlight {
+    width: 800px;
+    max-width: 70%;
+    font-size: 26px !important;
+    padding: 20px 50px !important;
+  }
+  
+  .bonus-amount {
+    font-size: 34px;
+  }
+} 

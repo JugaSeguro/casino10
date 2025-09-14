@@ -1,0 +1,154 @@
+/**
+ * Estilos base de la aplicación
+ * Contiene reset y estilos globales básicos
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenedor principal del contenido */
+.main-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas: 
+    "logo"
+    "title"
+    "promo"
+    "buttons";
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Ajustes responsive para main-content */
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-rows: auto auto 1fr auto;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    grid-template-rows: auto auto 1fr auto;
+    gap: 3px;
+  }
+}
+
+@media (max-height: 600px) {
+  .main-content {
+    grid-template-rows: auto auto 1fr auto;
+    gap: 2px;
+  }
+}
+
+/* Estilo básico para elementos de texto */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Estilo básico para enlaces */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Clase de utilidad para centrar texto */
+.text-center {
+  text-align: center;
+}
+
+/* Clase de utilidad para padding */
+.p-3 {
+  padding: 0.75rem;
+}
+
+/* Estilos para el webcomponent - completamente oculto por defecto */
+lux-user-register {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* Estilos para cuando el webcomponent está activo - completamente visible */
+lux-user-register[active],
+lux-user-register.active {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  clip: auto !important;
+  white-space: normal !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+/* Estilos para forzar visibilidad del modal cuando se activa */
+lux-user-register.active::part(modal),
+lux-user-register.active::part(dialog),
+lux-user-register.active > .modal,
+lux-user-register.active > div[role="dialog"],
+lux-user-register.active [class*="modal"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10000 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Estilos para formularios dentro del webcomponent cuando está activo */
+lux-user-register.active form,
+lux-user-register.active [class*="form"] {
+  background: white !important;
+  color: black !important;
+  padding: 20px !important;
+  border-radius: 8px !important;
+  max-width: 500px !important;
+  margin: 50px auto !important;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3) !important;
+} 

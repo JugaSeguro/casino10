@@ -1,0 +1,147 @@
+/**
+ * Estilos para el logo y el título del bono
+ * Responsable de la apariencia visual del logo y el mensaje promocional
+ */
+
+.logo-container {
+  grid-area: logo;
+  position: relative;
+  padding: 15px 20px 10px;
+  text-align: center;
+  z-index: 5;
+}
+
+.site-logo {
+  max-width: 380px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.bonus-title {
+  grid-area: title;
+  position: relative;
+  text-align: center;
+  padding: 0 20px 10px;
+  z-index: 6;
+}
+
+.bonus-title h1 {
+  color: #FFD700;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 8px 16px;
+  animation: pulse 1.5s infinite alternate;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 90%;
+  line-height: 1.2;
+}
+
+/* Animaciones */
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+  }
+  to {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    text-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.8),
+      0 0 20px rgba(255, 215, 0, 0.5),
+      0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  to {
+    transform: scale(1.05);
+    text-shadow: 
+      0 0 15px rgba(255, 215, 0, 1),
+      0 0 30px rgba(255, 215, 0, 0.7),
+      0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .logo-container {
+    padding: 10px 20px 5px;
+  }
+  
+  .site-logo {
+    max-width: 280px;
+  }
+  
+  .bonus-title {
+    padding: 0 15px 5px;
+  }
+  
+  .bonus-title h1 {
+    font-size: 18px;
+    padding: 5px 10px;
+    line-height: 1.1;
+  }
+}
+
+/* Ajustes para dispositivos muy pequeños */
+@media (max-width: 480px) {
+  .logo-container {
+    padding: 8px 15px 3px;
+  }
+  
+  .site-logo {
+    max-width: 220px;
+  }
+  
+  .bonus-title {
+    padding: 0 10px 3px;
+  }
+  
+  .bonus-title h1 {
+    font-size: 16px;
+    padding: 4px 8px;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+}
+
+/* Ajustes para dispositivos con orientación horizontal (landscape) */
+@media (max-height: 600px) and (orientation: landscape) {
+  .logo-container {
+    top: 15px;
+  }
+  
+  .site-logo {
+    max-width: 300px;
+  }
+  
+  .bonus-title {
+    top: 190px;
+  }
+  
+  .bonus-title h1 {
+    font-size: 16px;
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bonus-title {
+    top: 170px;
+  }
+  
+  .bonus-title h1 {
+    font-size: 24px;
+  }
+} 
