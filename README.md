@@ -1,5 +1,7 @@
 # Picante Sports - Página de Registro
 
+> Deploy actualizado - $(date)
+
 Landing page responsive para el registro de usuarios en la plataforma Picante Sports.
 
 ## Características
