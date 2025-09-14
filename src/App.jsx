@@ -35,7 +35,7 @@ function App() {
         </div>
         
         <div className="bonus-title">
-          <h1>Registrate gratis y pedi 2000 fichas para probar</h1>
+          <h1>{links.register_title}</h1>
         </div>
         
         <div className="promo-text">

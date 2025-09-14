@@ -14,7 +14,8 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Enlaces por defecto como fallback
 const DEFAULT_LINKS = {
-  whatsapp_link: 'https://wa.link/iqlqj4'
+  whatsapp_link: 'https://wa.link/iqlqj4',
+  register_title: 'Registrate gratis y pedi 2000 fichas para probar'
 };
 
 export const useGlobalLinks = () => {
@@ -30,7 +31,7 @@ export const useGlobalLinks = () => {
       // Intentar obtener enlaces desde Supabase
       const { data, error: supabaseError } = await supabase
         .from('global_link')
-        .select('whatsapp_link, updated_at')
+        .select('whatsapp_link, register_title, updated_at')
         .order('updated_at', { ascending: false })
         .limit(1)
         .single();
@@ -42,7 +43,8 @@ export const useGlobalLinks = () => {
       } else if (data) {
         console.log('Enlaces obtenidos desde Supabase:', data);
         setLinks({
-          whatsapp_link: data.whatsapp_link || DEFAULT_LINKS.whatsapp_link
+          whatsapp_link: data.whatsapp_link || DEFAULT_LINKS.whatsapp_link,
+          register_title: data.register_title || DEFAULT_LINKS.register_title
         });
       } else {
         console.log('No se encontraron enlaces, usando por defecto');
