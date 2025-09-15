@@ -5,10 +5,10 @@
 
 import React from 'react';
 import './styles/main.css';
-import { useGlobalLinks } from './hooks/useGlobalLinks';
+import { useLandingPhone } from './hooks/useLandingPhone';
 
 function App() {
-  const { links, loading, error } = useGlobalLinks();
+  const { phoneData, loading, error } = useLandingPhone();
 
   // Mostrar loading mientras se cargan los enlaces
   if (loading) {
@@ -35,7 +35,7 @@ function App() {
         </div>
         
         <div className="bonus-title">
-          <h1>{links.register_title}</h1>
+          <h1>{phoneData.title}</h1>
         </div>
         
         <div className="promo-text">
@@ -43,20 +43,20 @@ function App() {
           <p>Regístrate totalmente gratis en la plataforma más segura de Argentina. Contamos con más de 12000 Slots, la mejor deportiva y el mejor casino en vivo.</p>
           <p>✅ ¡Nosotros no tenemos límites de apuestas!</p>
           <p>✅ ¡Retira sin límite!</p>
-          <button id="bonus-button" className="bonus-highlight bonus-button" onClick={() => window.open(links.whatsapp_link, '_blank')}>
+          <button id="bonus-button" className="bonus-highlight bonus-button" onClick={() => window.open(phoneData.whatsapp_link, '_blank')}>
             🔥 ¡OBTENÉ   TU   <span className="bonus-amount">MEGABONUS</span>   CON TU PRIMER RECARGA! 🔥
           </button>
-          <p className="telegram-promo" onClick={() => window.open(links.whatsapp_link, '_blank')}>
+          <p className="telegram-promo" onClick={() => window.open(phoneData.whatsapp_link, '_blank')}>
             💬 CONTACTANOS POR WHATSAPP Y GANÁ PREMIOS DIARIOS 💬
           </p>
         </div>
         
         <div className="register-cta">
-          <button id="register-button" className="register-button" onClick={() => window.open(links.whatsapp_link, '_blank')}>¡REGISTRATE AHORA!</button>
+          <button id="register-button" className="register-button" onClick={() => window.open(phoneData.whatsapp_link, '_blank')}>¡REGISTRATE AHORA!</button>
           <button id="access-button" className="chat-button access-button" onClick={() => window.open('https://24envivo.com', '_blank')}>
             🎯 ACCEDER A 24ENVIVO.COM 🎯
           </button>
-          <button id="chat-button" className="chat-button" onClick={() => window.open(links.whatsapp_link, '_blank')}>
+          <button id="chat-button" className="chat-button" onClick={() => window.open(phoneData.whatsapp_link, '_blank')}>
             <i className="chat-icon"></i>
             <span>Chatear con nosotros</span>
           </button>
