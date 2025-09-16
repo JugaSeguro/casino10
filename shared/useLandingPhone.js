@@ -62,7 +62,7 @@ export const useLandingPhone = (landingNumber) => {
       // Intentar obtener número específico desde Supabase
       const { data, error: supabaseError } = await supabase
         .from('landing_phones')
-        .select('phone_number, whatsapp_link, description, is_active, individual_title, individual_whatsapp_link, use_individual_settings')
+        .select('whatsapp_link, description, is_active, individual_title, individual_whatsapp_link, use_individual_settings')
         .eq('landing_number', landingNumber)
         .eq('is_active', true)
         .single();
@@ -79,7 +79,7 @@ export const useLandingPhone = (landingNumber) => {
         const useIndividualTitle = data.use_individual_settings && data.individual_title;
         
         setPhoneData({
-          phone_number: data.phone_number || DEFAULT_PHONE.phone_number,
+          phone_number: DEFAULT_PHONE.phone_number, // Usar siempre el número por defecto ya que no está en la tabla
           whatsapp_link: useIndividualWhatsApp ? data.individual_whatsapp_link : (data.whatsapp_link || DEFAULT_PHONE.whatsapp_link),
           description: data.description || DEFAULT_PHONE.description,
           title: useIndividualTitle ? data.individual_title : DEFAULT_PHONE.title,
