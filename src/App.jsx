@@ -5,10 +5,10 @@
 
 import React from 'react';
 import './styles/main.css';
-import { useLandingPhone } from './hooks/useLandingPhone';
+import { useLandingPhone } from '@shared/useLandingPhone';
 
 function App() {
-  const { phoneData, loading, error } = useLandingPhone();
+  const { phoneData, loading } = useLandingPhone(4);
 
   // Mostrar loading mientras se cargan los enlaces
   if (loading) {

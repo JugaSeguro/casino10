@@ -16,7 +16,8 @@ export default defineConfig({
   // Configuración de resolución de alias
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src')
+      '@': resolve(__dirname, './src'),
+      '@shared': resolve(__dirname, '../shared')
     }
   },
   
