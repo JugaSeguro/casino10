@@ -8,7 +8,8 @@ import './styles/main.css';
 import { useLandingPhone } from '@shared/useLandingPhone';
 
 function App() {
-  const { phoneData, loading } = useLandingPhone(4);
+  // Detectar automáticamente el número de landing desde el subdominio
+  const { phoneData, loading } = useLandingPhone();
 
   // Mostrar loading mientras se cargan los enlaces
   if (loading) {
