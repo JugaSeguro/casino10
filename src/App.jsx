@@ -3,13 +3,15 @@
  * Gestiona la estructura principal y los estilos globales
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/main.css';
+import './styles/popup.css';
 import { useLandingPhone } from '@shared/useLandingPhone';
 
 function App() {
   // Detectar automáticamente el número de landing desde el subdominio
   const { phoneData, loading } = useLandingPhone();
+  const [showPopup, setShowPopup] = useState(false);
 
   // Mostrar loading mientras se cargan los enlaces
   if (loading) {
@@ -44,24 +46,55 @@ function App() {
           <p>Regístrate totalmente gratis en la plataforma más segura de Argentina. Contamos con más de 12000 Slots, la mejor deportiva y el mejor casino en vivo.</p>
           <p>✅ ¡Nosotros no tenemos límites de apuestas!</p>
           <p>✅ ¡Retira sin límite!</p>
-          <button id="bonus-button" className="bonus-highlight bonus-button" onClick={() => window.open(phoneData.whatsapp_link, '_blank')}>
-            🔥 ¡OBTENÉ   TU   <span className="bonus-amount">MEGABONUS</span>   CON TU PRIMER RECARGA! 🔥
+          <button id="bonus-button" className="bonus-highlight bonus-button" onClick={() => setShowPopup(true)}>
+            REGISTRATE GRATIS Y OBTENE UN <span className="bonus-amount">MEGABONUS</span> CON TU PRIMER RECARGA
           </button>
-          <p className="telegram-promo" onClick={() => window.open(phoneData.whatsapp_link, '_blank')}>
-            💬 CONTACTANOS POR WHATSAPP Y GANÁ PREMIOS DIARIOS 💬
-          </p>
         </div>
         
-        <div className="register-cta">
-          <button id="register-button" className="register-button" onClick={() => window.open(phoneData.whatsapp_link, '_blank')}>¡REGISTRATE AHORA!</button>
-          <button id="access-button" className="chat-button access-button" onClick={() => window.open('https://24envivo.com', '_blank')}>
-            🎯 ACCEDER A 24ENVIVO.COM 🎯
-          </button>
-          <button id="chat-button" className="chat-button" onClick={() => window.open(phoneData.whatsapp_link, '_blank')}>
-            <i className="chat-icon"></i>
-            <span>Chatear con nosotros</span>
-          </button>
-        </div>
+
+        
+        {/* Popup Modal */}
+        {showPopup && (
+          <div className="popup-overlay" onClick={() => setShowPopup(false)}>
+            <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+              <button className="popup-close" onClick={() => setShowPopup(false)}>×</button>
+              <h2>¡Elige tu forma de registro!</h2>
+              <div className="popup-options">
+                <div className="popup-option telegram-option" onClick={() => {
+                  window.open('https://t.me/casino24envivo_bot', '_blank');
+                  setShowPopup(false);
+                }}>
+                  <div className="option-icon">📱</div>
+                  <h3>Telegram VIP</h3>
+                  <p>✨ MÁS BENEFICIOS ✨</p>
+                  <p>✨ MÁS BONOS SIEMPRE ✨</p>
+                  <ul>
+                    <li>🎁 Bonos exclusivos diarios</li>
+                    <li>🚀 Promociones especiales</li>
+                    <li>⚡ Soporte 24/7 prioritario</li>
+                    <li>💎 Acceso VIP a torneos</li>
+                  </ul>
+                  <button className="option-button telegram-btn">Registrarme por Telegram</button>
+                </div>
+                
+                <div className="popup-option whatsapp-option" onClick={() => {
+                  window.open(phoneData.whatsapp_link, '_blank');
+                  setShowPopup(false);
+                }}>
+                  <div className="option-icon">💬</div>
+                  <h3>WhatsApp</h3>
+                  <p>Registro tradicional</p>
+                  <ul>
+                    <li>📞 Atención personalizada</li>
+                    <li>💰 Bonos de bienvenida</li>
+                    <li>🎯 Soporte directo</li>
+                  </ul>
+                  <button className="option-button whatsapp-btn">Registrarme por WhatsApp</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </>
   );

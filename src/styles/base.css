@@ -40,7 +40,7 @@ body, html {
     "buttons";
   padding: 0;
   box-sizing: border-box;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* Ajustes responsive para main-content */
@@ -62,6 +62,26 @@ body, html {
   .main-content {
     grid-template-rows: auto auto 1fr auto;
     gap: 2px;
+  }
+}
+
+/* Permitir scroll en landscape */
+@media (max-height: 600px) and (orientation: landscape) {
+  .main-content {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+  }
+}
+
+/* Ajustes específicos para dispositivos muy pequeños en landscape */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-content {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    gap: 1px;
   }
 }
 
@@ -151,4 +171,4 @@ lux-user-register.active [class*="form"] {
   max-width: 500px !important;
   margin: 50px auto !important;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3) !important;
-} 
+}
