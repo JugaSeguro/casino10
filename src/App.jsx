@@ -61,7 +61,7 @@ function App() {
               <h2>¡Elige tu forma de registro!</h2>
               <div className="popup-options">
                 <div className="popup-option telegram-option" onClick={() => {
-                  window.open('https://t.me/casino24envivo_bot', '_blank');
+                  window.open('https://t.me/casino1xclub_bot', '_blank');
                   setShowPopup(false);
                 }}>
                   <div className="option-icon">📱</div>
