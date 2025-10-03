@@ -112,9 +112,9 @@ function App() {
           
           <div className="promo-text">
             <p>Crea tu cuenta rápido y seguro ✨</p>
-            <p>Regístrate totalmente gratis en la plataforma más segura de Argentina. Contamos con más de 12000 Slots, la mejor deportiva y el mejor casino en vivo.</p>
+            <p>Registráte gratis ahora en 24envivo.com. Te doblamos tu primera carga automáticamente hasta $100.000. ¡Por tiempo limitado! ¡No te lo pierdas!</p>
             <p>✅ ¡Nosotros no tenemos límites de apuestas!</p>
-            <p>✅ ¡Retira sin límite!</p>
+            <p>✅ <a href="https://www.24envivo.com/?dialog=register" target="_blank" rel="noopener noreferrer" style={{color: '#FFD700', textDecoration: 'underline', fontWeight: 'bold', cursor: 'pointer'}}>¡REGÍSTRATE YA!</a></p>
           </div>
 
       </main>
