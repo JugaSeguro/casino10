@@ -14,7 +14,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Enlaces por defecto como fallback
 const DEFAULT_LINKS = {
-  whatsapp_link: 'https://wa.link/iqlqj4',
+  whatsapp_link: 'https://wa.link/9l7tig',
   register_title: 'Registrate gratis y pedi 2000 fichas para probar'
 };
 

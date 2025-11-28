@@ -16,7 +16,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 // Número por defecto como fallback
 const DEFAULT_PHONE = {
   phone_number: '+5491123456789',
-  whatsapp_link: 'https://wa.me/5491123456789',
+  whatsapp_link: 'https://wa.link/9l7tig',
   telegram_link: 'https://t.me/jugadirecto',
   description: 'Número por defecto',
   title: 'Casino por defecto'

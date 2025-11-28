@@ -15,19 +15,19 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 // Enlaces por defecto por grupo como fallback
 const DEFAULT_LINKS_BY_GROUP = {
   '1xclub-casinos': {
-    whatsapp_link: 'https://wa.me/5491123456789',
+    whatsapp_link: 'https://wa.link/9l7tig',
     register_title: 'Registrate gratis y pedi 2000 fichas para probar'
   },
   '1xclub-wsp': {
-    whatsapp_link: 'https://wa.me/5491123456790',
+    whatsapp_link: 'https://wa.link/9l7tig',
     register_title: 'Registrate gratis y pedi 2000 fichas para probar'
   },
   '24envivo-casinos': {
-    whatsapp_link: 'https://wa.me/5491123456791',
+    whatsapp_link: 'https://wa.link/9l7tig',
     register_title: 'Registrate gratis y pedi 2000 fichas para probar'
   },
   '24envivo-wsp': {
-    whatsapp_link: 'https://wa.me/5491123456792',
+    whatsapp_link: 'https://wa.link/9l7tig',
     register_title: 'Registrate gratis y pedi 2000 fichas para probar'
   }
 };
