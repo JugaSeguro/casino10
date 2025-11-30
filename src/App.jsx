@@ -7,11 +7,17 @@ import React, { useEffect, useState } from 'react';
 import './styles/main.css';
 import './styles/popup.css';
 import { useLandingPhone } from '@shared/useLandingPhone';
+import { initFacebookPixel } from './lib/facebookPixel';
 
 
 
 function App() {
   const { phoneData, loading, error } = useLandingPhone();
+
+  // Inicialización del Facebook Pixel (verificación y tracking)
+  useEffect(() => {
+    initFacebookPixel('1248261610480852', 'en_US');
+  }, []);
 
   // Efectos al cargar el componente
   useEffect(() => {
